@@ -48,7 +48,7 @@ export default function Home() {
             <a href="#antecedentes">Antecedentes</a>
             <a href="#contacto">Contacto</a>
             <a className="strip-wa" href={WHATSAPP} target="_blank" rel="noopener">
-              WhatsApp
+              WhatsApp<span className="sr"> (se abre en otra pestaña)</span>
             </a>
           </nav>
         </header>
@@ -82,7 +82,15 @@ export default function Home() {
 
           <aside className="side">
             <figure className="carnet">
-              <img src="/alejandra.jpg" alt="Alejandra Lazzarano" width={720} height={720} />
+              {/* pre-cropped to the 3:4 carnet; shown at ~160px (240px on tablet), so 320/480 cover 2x screens */}
+              <picture>
+                <source
+                  type="image/webp"
+                  srcSet="/alejandra-320.webp 320w, /alejandra-480.webp 480w"
+                  sizes="(max-width: 860px) 240px, 160px"
+                />
+                <img src="/alejandra-480.jpg" alt="Alejandra Lazzarano" width={480} height={640} decoding="async" />
+              </picture>
               <figcaption>A. Lazzarano</figcaption>
             </figure>
             <div className="auth">
@@ -94,7 +102,7 @@ export default function Home() {
               <div className="stamped">
                 <Stamp />
                 <a className="btn" href={WHATSAPP} target="_blank" rel="noopener">
-                  Escribime por WhatsApp
+                  Escribime por WhatsApp<span className="sr"> (se abre en otra pestaña)</span>
                 </a>
               </div>
               <a className="alt" href={MAIL}>
@@ -190,7 +198,7 @@ export default function Home() {
             <span className="label">Contacto</span>
             <div className="firma">
               <a className="btn" href={WHATSAPP} target="_blank" rel="noopener">
-                Escribime por WhatsApp
+                Escribime por WhatsApp<span className="sr"> (se abre en otra pestaña)</span>
               </a>
               <a className="alt" href={MAIL}>
                 alazzarano@hotmail.com

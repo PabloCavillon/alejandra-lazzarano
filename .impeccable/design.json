@@ -1,46 +1,273 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-21T00:00:00Z",
+  "generatedAt": "2026-11-21T12:00:00Z",
   "title": "Design System: Alejandra Lazzarano · Gestión de obras sociales",
   "extensions": {
     "colorMeta": {
-      "form-ink": { "role": "primary", "displayName": "Form Ink", "canonical": "#1f2a5a", "cssVar": "--form", "tonalRamp": ["oklch(15% 0.05 272)", "oklch(25% 0.075 272)", "oklch(29% 0.08 272)", "oklch(40% 0.08 272)", "oklch(52% 0.07 272)", "oklch(66% 0.05 272)", "oklch(82% 0.03 272)", "oklch(95% 0.01 272)"] },
-      "form-ink-soft": { "role": "primary", "displayName": "Form Ink Soft", "canonical": "#4a5480", "cssVar": "--form-soft", "tonalRamp": ["oklch(15% 0.04 275)", "oklch(25% 0.06 275)", "oklch(35% 0.07 275)", "oklch(44% 0.07 275)", "oklch(55% 0.06 275)", "oklch(70% 0.045 275)", "oklch(85% 0.025 275)", "oklch(95% 0.01 275)"] },
-      "sello-violet": { "role": "secondary", "displayName": "Sello Violet", "canonical": "#5b3f9e", "cssVar": "--sello", "tonalRamp": ["oklch(15% 0.06 295)", "oklch(25% 0.1 295)", "oklch(37% 0.12 295)", "oklch(44% 0.14 295)", "oklch(55% 0.13 295)", "oklch(70% 0.09 295)", "oklch(85% 0.05 295)", "oklch(95% 0.02 295)"] },
-      "sello-violet-deep": { "role": "secondary", "displayName": "Sello Violet Deep", "canonical": "#46307d", "cssVar": "--sello-deep", "tonalRamp": ["oklch(15% 0.06 295)", "oklch(25% 0.1 295)", "oklch(37% 0.12 295)", "oklch(44% 0.14 295)", "oklch(55% 0.13 295)", "oklch(70% 0.09 295)", "oklch(85% 0.05 295)", "oklch(95% 0.02 295)"] },
-      "duplicado-pink": { "role": "neutral", "displayName": "Duplicado Pink", "canonical": "#f3c4cf", "cssVar": "--duplicado", "tonalRamp": ["oklch(15% 0.03 0)", "oklch(25% 0.05 0)", "oklch(35% 0.07 0)", "oklch(45% 0.08 0)", "oklch(55% 0.08 0)", "oklch(70% 0.07 0)", "oklch(86% 0.06 0)", "oklch(95% 0.02 0)"] },
-      "triplicado-celeste": { "role": "neutral", "displayName": "Triplicado Celeste", "canonical": "#bfd7ea", "cssVar": "--triplicado", "tonalRamp": ["oklch(15% 0.02 245)", "oklch(25% 0.03 245)", "oklch(35% 0.04 245)", "oklch(45% 0.045 245)", "oklch(55% 0.045 245)", "oklch(70% 0.04 245)", "oklch(86% 0.035 245)", "oklch(95% 0.012 245)"] },
-      "original-sheet": { "role": "neutral", "displayName": "Original Sheet", "canonical": "#fcfcfb", "cssVar": "--original", "tonalRamp": ["oklch(15% 0.002 100)", "oklch(25% 0.002 100)", "oklch(35% 0.002 100)", "oklch(45% 0.002 100)", "oklch(55% 0.002 100)", "oklch(70% 0.002 100)", "oklch(85% 0.002 100)", "oklch(99% 0.002 100)"] },
-      "carbon-type": { "role": "neutral", "displayName": "Carbon Type", "canonical": "#1a1a1a", "cssVar": "--carbon", "tonalRamp": ["oklch(15% 0 0)", "oklch(21% 0 0)", "oklch(35% 0 0)", "oklch(45% 0 0)", "oklch(55% 0 0)", "oklch(70% 0 0)", "oklch(85% 0 0)", "oklch(95% 0 0)"] }
+      "form-ink": {
+        "role": "primary",
+        "displayName": "Form Ink",
+        "canonical": "#1f2a5a",
+        "cssVar": "--form",
+        "tonalRamp": [
+          "oklch(15% 0.05 272)",
+          "oklch(25% 0.075 272)",
+          "oklch(29% 0.08 272)",
+          "oklch(40% 0.08 272)",
+          "oklch(52% 0.07 272)",
+          "oklch(66% 0.05 272)",
+          "oklch(82% 0.03 272)",
+          "oklch(95% 0.01 272)"
+        ]
+      },
+      "form-ink-soft": {
+        "role": "primary",
+        "displayName": "Form Ink Soft",
+        "canonical": "#4a5480",
+        "cssVar": "--form-soft",
+        "tonalRamp": [
+          "oklch(15% 0.04 275)",
+          "oklch(25% 0.06 275)",
+          "oklch(35% 0.07 275)",
+          "oklch(44% 0.07 275)",
+          "oklch(55% 0.06 275)",
+          "oklch(70% 0.045 275)",
+          "oklch(85% 0.025 275)",
+          "oklch(95% 0.01 275)"
+        ]
+      },
+      "sello-violet": {
+        "role": "secondary",
+        "displayName": "Sello Violet",
+        "canonical": "#5b3f9e",
+        "cssVar": "--sello",
+        "tonalRamp": [
+          "oklch(15% 0.06 295)",
+          "oklch(25% 0.1 295)",
+          "oklch(37% 0.12 295)",
+          "oklch(44% 0.14 295)",
+          "oklch(55% 0.13 295)",
+          "oklch(70% 0.09 295)",
+          "oklch(85% 0.05 295)",
+          "oklch(95% 0.02 295)"
+        ]
+      },
+      "sello-violet-deep": {
+        "role": "secondary",
+        "displayName": "Sello Violet Deep",
+        "canonical": "#46307d",
+        "cssVar": "--sello-deep",
+        "tonalRamp": [
+          "oklch(15% 0.06 295)",
+          "oklch(25% 0.1 295)",
+          "oklch(37% 0.12 295)",
+          "oklch(44% 0.14 295)",
+          "oklch(55% 0.13 295)",
+          "oklch(70% 0.09 295)",
+          "oklch(85% 0.05 295)",
+          "oklch(95% 0.02 295)"
+        ]
+      },
+      "duplicado-pink": {
+        "role": "neutral",
+        "displayName": "Duplicado Pink",
+        "canonical": "#f3c4cf",
+        "cssVar": "--duplicado",
+        "tonalRamp": [
+          "oklch(15% 0.03 0)",
+          "oklch(25% 0.05 0)",
+          "oklch(35% 0.07 0)",
+          "oklch(45% 0.08 0)",
+          "oklch(55% 0.08 0)",
+          "oklch(70% 0.07 0)",
+          "oklch(86% 0.06 0)",
+          "oklch(95% 0.02 0)"
+        ]
+      },
+      "triplicado-celeste": {
+        "role": "neutral",
+        "displayName": "Triplicado Celeste",
+        "canonical": "#bfd7ea",
+        "cssVar": "--triplicado",
+        "tonalRamp": [
+          "oklch(15% 0.02 245)",
+          "oklch(25% 0.03 245)",
+          "oklch(35% 0.04 245)",
+          "oklch(45% 0.045 245)",
+          "oklch(55% 0.045 245)",
+          "oklch(70% 0.04 245)",
+          "oklch(86% 0.035 245)",
+          "oklch(95% 0.012 245)"
+        ]
+      },
+      "original-sheet": {
+        "role": "neutral",
+        "displayName": "Original Sheet",
+        "canonical": "#fcfcfb",
+        "cssVar": "--original",
+        "tonalRamp": [
+          "oklch(15% 0.002 100)",
+          "oklch(25% 0.002 100)",
+          "oklch(35% 0.002 100)",
+          "oklch(45% 0.002 100)",
+          "oklch(55% 0.002 100)",
+          "oklch(70% 0.002 100)",
+          "oklch(85% 0.002 100)",
+          "oklch(99% 0.002 100)"
+        ]
+      },
+      "carbon-type": {
+        "role": "neutral",
+        "displayName": "Carbon Type",
+        "canonical": "#1a1a1a",
+        "cssVar": "--carbon",
+        "tonalRamp": [
+          "oklch(15% 0 0)",
+          "oklch(21% 0 0)",
+          "oklch(35% 0 0)",
+          "oklch(45% 0 0)",
+          "oklch(55% 0 0)",
+          "oklch(70% 0 0)",
+          "oklch(85% 0 0)",
+          "oklch(95% 0 0)"
+        ]
+      }
     },
     "typographyMeta": {
-      "display": { "displayName": "Display", "purpose": "The headline as the 'Práctica solicitada' field value; uppercase, balanced, one per surface.", "cssVar": "--f-print" },
-      "headline": { "displayName": "Part head", "purpose": "Heads of each ruled part; optional sentence-case subtitle at 0.5em, 600, width 85%, Form Ink Soft." },
-      "title": { "displayName": "Title", "purpose": "Item heads inside a field row (numbered circuit steps)." },
-      "body": { "displayName": "Typed value", "purpose": "Every value typed into the form: field values, list items, table cells, captions, the form number. Max 62ch, carbon offset text-shadow.", "cssVar": "--f-type" },
-      "body-print": { "displayName": "Printed prose", "purpose": "Base body text, nav, links and footer in the print face." },
-      "label": { "displayName": "Field label", "purpose": "Boxed uppercase form labels and ledger column heads." },
-      "button": { "displayName": "Button", "purpose": "Primary action label." }
+      "display": {
+        "displayName": "Display",
+        "purpose": "The headline as the 'Práctica solicitada' field value; uppercase, balanced, one per surface. Hyphenates and breaks long words so enlarged text never scrolls sideways.",
+        "cssVar": "--f-print"
+      },
+      "headline": {
+        "displayName": "Part head",
+        "purpose": "Heads of each ruled part; optional sentence-case subtitle at 0.5em, 600, width 85%, Form Ink Soft."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Item heads inside a field row (numbered circuit steps)."
+      },
+      "body": {
+        "displayName": "Typed value",
+        "purpose": "Every value typed into the form: field values, list items, table cells, captions, the form number. Max 62ch, carbon offset text-shadow.",
+        "cssVar": "--f-type"
+      },
+      "body-print": {
+        "displayName": "Printed prose",
+        "purpose": "Base body text (1.0625rem, follows the reader's text-size setting), nav, links and footer in the print face."
+      },
+      "label": {
+        "displayName": "Field label",
+        "purpose": "Boxed uppercase form labels and ledger column heads."
+      },
+      "button": {
+        "displayName": "Button",
+        "purpose": "Primary action label."
+      }
     },
     "shadows": [
-      { "name": "sheet-on-copy", "value": "0 2px 3px rgb(80 20 40 / 0.12), 0 18px 40px -12px rgb(80 20 40 / 0.28)", "purpose": "The original sheet resting on the pink duplicate." },
-      { "name": "triplicate-beneath", "value": "0 10px 24px -10px rgb(30 40 90 / 0.3)", "purpose": "The celeste copy offset and rotated 0.5deg beneath the sheet." },
-      { "name": "laid-print", "value": "0 2px 3px rgb(0 0 0 / 0.15), 0 10px 18px -8px rgb(0 0 0 / 0.35)", "purpose": "The passport photo print laid on the sheet." },
-      { "name": "carbon-offset", "value": "text-shadow: 0.7px 0.5px 0 rgb(31 42 90 / 0.16)", "purpose": "Faint carbon offset behind typed values only." }
+      {
+        "name": "sheet-on-copy",
+        "value": "0 2px 3px rgb(80 20 40 / 0.12), 0 18px 40px -12px rgb(80 20 40 / 0.28)",
+        "purpose": "The original sheet resting on the pink duplicate."
+      },
+      {
+        "name": "triplicate-beneath",
+        "value": "0 10px 24px -10px rgb(30 40 90 / 0.3)",
+        "purpose": "The celeste copy offset and rotated 0.5deg beneath the sheet."
+      },
+      {
+        "name": "laid-print",
+        "value": "0 2px 3px rgb(80 20 40 / 0.16), 0 10px 18px -8px rgb(80 20 40 / 0.36)",
+        "purpose": "The passport photo print laid on the sheet, tinted like the sheet's own shadow."
+      },
+      {
+        "name": "carbon-offset",
+        "value": "text-shadow: 0.7px 0.5px 0 rgb(31 42 90 / 0.16)",
+        "purpose": "Faint carbon offset behind typed values only."
+      },
+      {
+        "name": "carbon-ghost",
+        "value": "opacity: 0.34; mix-blend-mode: multiply; filter: blur(0.7px)",
+        "purpose": "The stamp's carbon ghost on the pink duplicate, behind the sheet and the celeste copy."
+      }
     ],
     "motion": [
-      { "name": "ui-state", "value": "0.2s ease-out", "purpose": "Button background and press transitions." },
-      { "name": "stamp-fall", "value": "190ms cubic-bezier(0.55, 0, 1, 0.45)", "purpose": "Stamp coming down from 1.65x (1.18x on re-strike) with 5px blur." },
-      { "name": "stamp-spring", "value": "460ms underdamped spring (4.2Hz, damping 0.42, kick -2.4), sampled at 60fps via Web Animations API", "purpose": "Rubber squashing past 1 and settling after contact." },
-      { "name": "ink-fill", "value": "520ms ease-out cubic on the ink-mask alpha threshold (1.25 to 2.1)", "purpose": "Patchy ink at contact filling in." },
-      { "name": "contact-dip", "value": "160ms ease-out, translate 0 2px", "purpose": "The button takes the hit at contact." },
-      { "name": "stamp-lift", "value": "0.4s cubic-bezier(0.34, 1.56, 0.64, 1)", "purpose": "Stamp lifts (-5px, 1.035, 0.78 opacity) while the button is hovered or focused." },
-      { "name": "reduced-motion", "value": "prefers-reduced-motion: reduce", "purpose": "Stamp static at -9deg and visible; no strike, lift, transitions or smooth scroll." }
+      {
+        "name": "ui-state",
+        "value": "0.2s ease-out",
+        "purpose": "Button background and press transitions."
+      },
+      {
+        "name": "stamp-fall",
+        "value": "190ms cubic-bezier(0.55, 0, 1, 0.45)",
+        "purpose": "Stamp coming down from 1.65x (1.18x on re-strike) with 5px blur."
+      },
+      {
+        "name": "stamp-spring",
+        "value": "460ms underdamped spring (4.2Hz, damping 0.42, kick -2.4), sampled at 60fps via Web Animations API",
+        "purpose": "Rubber squashing past 1 and settling after contact."
+      },
+      {
+        "name": "ink-fill",
+        "value": "520ms ease-out cubic on the ink-mask alpha threshold (1.25 to 2.1)",
+        "purpose": "Patchy ink at contact filling in."
+      },
+      {
+        "name": "contact-dip",
+        "value": "160ms ease-out, translate 0 2px",
+        "purpose": "The button takes the hit at contact."
+      },
+      {
+        "name": "stamp-lift",
+        "value": "0.4s cubic-bezier(0.34, 1.56, 0.64, 1)",
+        "purpose": "Stamp lifts (-5px, 1.035, 0.78 opacity) while the button is hovered (hover-capable devices only) or keyboard-focused."
+      },
+      {
+        "name": "ghost-fade",
+        "value": "700ms ease-out, opacity 0 to 0.34, starting at contact (after the 190ms fall)",
+        "purpose": "The strike's carbon ghost appearing on the pink duplicate."
+      },
+      {
+        "name": "pre-paint",
+        "value": "html.js + prefers-reduced-motion: no-preference",
+        "purpose": "Stamp and ghost held at opacity 0 until they strike (.struck), so they never flash."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "prefers-reduced-motion: reduce",
+        "purpose": "Stamp (static at -9deg) and its ghost visible; no strike, lift, fade, transitions or smooth scroll."
+      }
     ],
     "breakpoints": [
-      { "name": "sheet-margin", "value": "640px" },
-      { "name": "stack", "value": "860px" },
-      { "name": "compact", "value": "520px" }
+      {
+        "name": "ghost",
+        "value": "min-width: 1300px"
+      },
+      {
+        "name": "stack",
+        "value": "max-width: 860px"
+      },
+      {
+        "name": "triplicate-tight",
+        "value": "max-width: 640px"
+      },
+      {
+        "name": "compact",
+        "value": "max-width: 520px"
+      },
+      {
+        "name": "phone-reorder",
+        "value": "(max-width: 520px), (max-width: 860px) and (max-height: 500px)"
+      },
+      {
+        "name": "hover",
+        "value": "hover: hover"
+      },
+      {
+        "name": "touch",
+        "value": "pointer: coarse"
+      }
     ]
   },
   "components": [
@@ -66,7 +293,7 @@
       "refersTo": "link-alt",
       "description": "Secondary mail route under the primary button.",
       "html": "<a class=\"ds-alt\" href=\"#\">o mandame un mail</a>",
-      "css": ".ds-alt { font-family: var(--f-print), Archivo, system-ui, sans-serif; font-size: 0.98rem; color: #4a5480; text-underline-offset: 0.2em; } .ds-alt:hover { color: #5b3f9e; } .ds-alt:focus-visible { outline: 3px solid #5b3f9e; outline-offset: 3px; border-radius: 2px; }"
+      "css": ".ds-alt { display: inline-block; font-family: var(--f-print), Archivo, system-ui, sans-serif; font-size: 0.98rem; color: #4a5480; text-underline-offset: 0.2em; overflow-wrap: anywhere; } .ds-alt:hover { color: #5b3f9e; } .ds-alt:focus-visible { outline: 3px solid #5b3f9e; outline-offset: 3px; border-radius: 2px; } @media (pointer: coarse) { .ds-alt { padding-block: 10px; } }"
     },
     {
       "name": "Header Strip",
@@ -103,37 +330,66 @@
       "kind": "custom",
       "description": "Signature: the violet rubber stamp over the primary button (static snapshot; the strike runs in app/stamp.tsx).",
       "html": "<div class=\"ds-stamped\"><svg class=\"ds-stamp\" viewBox=\"0 0 320 120\" aria-hidden=\"true\"><g fill=\"none\" stroke=\"currentColor\"><rect x=\"6\" y=\"6\" width=\"308\" height=\"108\" rx=\"10\" stroke-width=\"6\"/><rect x=\"16\" y=\"16\" width=\"288\" height=\"88\" rx=\"5\" stroke-width=\"2\"/><text x=\"160\" y=\"77\" text-anchor=\"middle\" textLength=\"258\" lengthAdjust=\"spacingAndGlyphs\" fill=\"currentColor\" stroke=\"none\" class=\"ds-stamp-word\">AUTORIZADO</text></g></svg><a class=\"ds-stamp-btn\" href=\"#\">Escribime por WhatsApp</a></div>",
-      "css": ".ds-stamped { position: relative; padding-top: 74px; display: inline-block; } .ds-stamp { position: absolute; z-index: 1; width: 210px; top: 0; left: 34px; color: #5b3f9e; opacity: 0.9; transform: rotate(-9deg); pointer-events: none; transition: translate 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), scale 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.25s ease-out; } .ds-stamp-word { font-family: var(--f-print), Archivo, sans-serif; font-stretch: 70%; font-weight: 800; font-size: 56px; } .ds-stamp-btn { display: inline-block; background: #1f2a5a; color: #fcfcfb; text-decoration: none; font-family: var(--f-print), Archivo, sans-serif; font-stretch: 80%; font-weight: 700; font-size: 1.12rem; padding: 15px 22px; border-radius: 3px; } .ds-stamp-btn:hover { background: #46307d; } .ds-stamped:has(.ds-stamp-btn:hover, .ds-stamp-btn:focus-visible) .ds-stamp { translate: 0 -5px; scale: 1.035; opacity: 0.78; } @media (prefers-reduced-motion: reduce) { .ds-stamp { transition: none; } .ds-stamped:has(.ds-stamp-btn:hover) .ds-stamp { translate: none; scale: none; } }"
+      "css": ".ds-stamped { position: relative; padding-top: 74px; display: inline-block; } .ds-stamp { position: absolute; z-index: 1; width: 210px; top: 0; left: 34px; color: #5b3f9e; opacity: 0.9; transform: rotate(-9deg); pointer-events: none; transition: translate 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), scale 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.25s ease-out; } .ds-stamp-word { font-family: var(--f-print), Archivo, sans-serif; font-stretch: 70%; font-weight: 800; font-size: 56px; } .ds-stamp-btn { display: inline-block; background: #1f2a5a; color: #fcfcfb; text-decoration: none; font-family: var(--f-print), Archivo, sans-serif; font-stretch: 80%; font-weight: 700; font-size: 1.12rem; padding: 15px 22px; border-radius: 3px; } .ds-stamp-btn:hover { background: #46307d; } .ds-stamped:has(.ds-stamp-btn:focus-visible) .ds-stamp { translate: 0 -5px; scale: 1.035; opacity: 0.78; } @media (hover: hover) { .ds-stamped:has(.ds-stamp-btn:hover) .ds-stamp { translate: 0 -5px; scale: 1.035; opacity: 0.78; } } @media (prefers-reduced-motion: reduce) { .ds-stamp { transition: none; } .ds-stamped:has(.ds-stamp-btn:hover, .ds-stamp-btn:focus-visible) .ds-stamp { translate: none; scale: none; } }"
+    },
+    {
+      "name": "Talón Perforation",
+      "kind": "custom",
+      "description": "The talón's tear line: punched holes showing the pink copy, with die-cut notches at both sheet edges.",
+      "html": "<div class=\"ds-talon-wrap\"><div class=\"ds-talon\"><h2 class=\"ds-talon-head\">Talón para el prestador</h2></div></div>",
+      "css": ".ds-talon-wrap { background: #f3c4cf; padding: 24px; } .ds-talon { position: relative; background: color-mix(in srgb, #bfd7ea 30%, #fcfcfb); padding: 40px 32px 18px; } .ds-talon::before { content: ''; position: absolute; left: 22px; right: 22px; top: -4px; height: 8px; background: radial-gradient(circle at 4px 4px, #f3c4cf 2.3px, rgb(110 40 70 / 0.45) 2.9px, transparent 3.5px) 0 0 / 11px 8px repeat-x; } .ds-talon::after { content: ''; position: absolute; left: -10px; right: -10px; top: -10px; height: 20px; background: radial-gradient(circle at 10px 10px, #f3c4cf 9.5px, transparent 10px) left / 20px 20px no-repeat, radial-gradient(circle at 10px 10px, #f3c4cf 9.5px, transparent 10px) right / 20px 20px no-repeat; pointer-events: none; } .ds-talon-head { margin: 0; font-family: var(--f-print), Archivo, system-ui, sans-serif; font-stretch: 65%; font-weight: 800; text-transform: uppercase; font-size: 2rem; line-height: 0.98; color: #1f2a5a; }"
     }
   ],
   "narrative": {
     "northStar": "Orden autorizada",
-    "overview": "The whole surface is one administrative form: an orden de prestación printed in a single deep blue-black form ink on a white original, laid over its pink carbon duplicate with the celeste triplicate peeking out beneath. Every piece of content is a field on that form: a boxed, condensed, uppercase printed label on the left, and the value typed in beside it in a typewriter face. Sections are further ruled parts of the same order, and the contact block is the talón, separated by a perforation.\n\nDensity is that of a real form: ruled rows, hairline and double-weight rules, tight label column, no floating cards. Color carries meaning by material, not by decoration: form ink is everything pre-printed, carbon black is everything typed, violet is the one rubber stamp. The stamp is the single authored motion moment; it strikes the authorization box once, unevenly inked, and lands across the primary action.",
+    "overview": "The whole surface is one administrative form: an orden de prestación printed in a single deep blue-black form ink on a white original, laid over its pink carbon duplicate with the celeste triplicate peeking out beneath. Every piece of content is a field on that form: a boxed, condensed, uppercase printed label on the left, and the value typed in beside it in a typewriter face. Sections are further ruled parts of the same order, and the contact block is the talón, separated by a row of punched holes.\n\nDensity is that of a real form: ruled rows, hairline and double-weight rules, tight label column, no floating cards. Color carries meaning by material, not by decoration: form ink is everything pre-printed, carbon black is everything typed, violet is the one rubber stamp. The stamp is the single authored motion moment; it strikes the authorization box once, unevenly inked, and lands across the primary action; on wide screens the same strike shows through faintly on the pink copy past the sheet's edge.",
     "keyCharacteristics": [
-      "One sheet on a pink carbon copy, celeste triplicate offset beneath it.",
+      "One sheet on a pink carbon copy, celeste triplicate offset beneath it; the pink always frames the sheet.",
       "Two voices only: condensed printed grotesk (Archivo, width axis) for what the form prints; Courier Prime for what is typed in.",
       "Label + value field rows on a ruled grid are the grammar of every section.",
-      "Square, ruled geometry; the only rounding is 3px on actionable controls.",
-      "One violet rubber stamp, one strike, with per-visit angle and ink pattern."
+      "Square, ruled geometry; the only rounding is 3px on actionable controls (2px on the focus ring).",
+      "One violet rubber stamp, one strike, with per-visit angle and ink pattern, carried through as a carbon ghost onto the duplicate."
     ],
     "rules": [
-      { "name": "The Material Ink Rule", "body": "A color names a material, not a mood: print is Form Ink, typed values are Carbon Type, the stamp is Sello Violet, paper is one of the three copies. A new element takes the ink of what it would physically be on the form.", "section": "colors" },
-      { "name": "The One Stamp Rule", "body": "Sello Violet appears as a full mark exactly once per surface: the AUTORIZADO stamp. Everywhere else it is limited to interaction states (focus, selection, hover).", "section": "colors" },
-      { "name": "The Typed-Value Rule", "body": "Courier Prime is for content the form receives (values, list items, table cells, captions, the form number), never for printed headings, labels, buttons or navigation.", "section": "typography" },
-      { "name": "The Narrower-Is-Louder Rule", "body": "Scale up with font-stretch toward 62%, not with extra weight beyond 800.", "section": "typography" },
-      { "name": "The Paper-Only Depth Rule", "body": "Shadows belong to physical sheets and prints. Controls, rows and boxes inside the form are flat; they are separated by rules.", "section": "elevation" }
+      {
+        "name": "The Material Ink Rule",
+        "body": "A color names a material, not a mood: print is Form Ink, typed values are Carbon Type, the stamp is Sello Violet, paper is one of the three copies. A new element takes the ink of what it would physically be on the form.",
+        "section": "colors"
+      },
+      {
+        "name": "The One Stamp Rule",
+        "body": "Sello Violet appears as a full mark exactly once per surface: the AUTORIZADO stamp. Its only echo is that same strike carried through as a faint carbon ghost onto the pink duplicate; it is the same impression, not a second stamp. Everywhere else violet is limited to interaction states (focus, selection, hover).",
+        "section": "colors"
+      },
+      {
+        "name": "The Typed-Value Rule",
+        "body": "Courier Prime is for content the form receives (values, list items, table cells, captions, the form number), never for printed headings, labels, buttons or navigation.",
+        "section": "typography"
+      },
+      {
+        "name": "The Narrower-Is-Louder Rule",
+        "body": "Scale up with font-stretch toward 62%, not with extra weight beyond 800.",
+        "section": "typography"
+      },
+      {
+        "name": "The Paper-Only Depth Rule",
+        "body": "Shadows belong to physical sheets and prints. Controls, rows and boxes inside the form are flat; they are separated by rules.",
+        "section": "elevation"
+      }
     ],
     "dos": [
       "Do express new content as field rows: a boxed printed label beside a typed value on the 9.5rem label grid.",
-      "Do separate with rules (1px rows, 2px parts, dotted sub-items, dashed perforation), never with cards or gaps alone.",
+      "Do separate with rules (1px rows, 2px parts, dotted sub-items, punched perforation), never with cards or gaps alone.",
       "Do set every typed value in Courier Prime Carbon Type with the faint carbon offset, max 62ch.",
       "Do scale printed headings by narrowing the width axis (62–78%) at weight 750–800.",
       "Do keep Sello Violet to the single stamp plus focus, selection and hover states.",
-      "Do keep the stamp static and fully visible under prefers-reduced-motion."
+      "Do keep the stamp static and fully visible under prefers-reduced-motion.",
+      "Do keep the pink duplicate visible around the sheet at every width.",
+      "Do gate hover-only effects behind a hover-capable pointer, and give text links a 44px tap area under a coarse pointer."
     ],
     "donts": [
       "Don't set headings, labels, buttons or navigation in the typewriter face.",
-      "Don't add a second stamp or a second full violet mark to a surface.",
+      "Don't add a second stamp or a second full violet mark to a surface; the carbon ghost is the one strike carried through, not a new mark.",
       "Don't round containers, label boxes or check boxes; 3px belongs to actionable controls only.",
       "Don't put shadows on anything that is not a physical sheet or print laid on the form.",
       "Don't introduce colors outside the three inks and three paper copies."

@@ -34,7 +34,8 @@ img { max-width: 100%; display: block; }
 /* the original sheet, with the celeste triplicate peeking out below it */
 .sheet {
   position: relative;
-  max-width: 1180px;
+  /* the pink copy always frames the sheet, even on tablets */
+  width: min(1180px, 100% - 2 * clamp(16px, 3vw, 40px));
   margin: clamp(12px, 3vw, 40px) auto clamp(28px, 5vw, 64px);
   background: linear-gradient(rgb(252 252 251 / 0.93), rgb(252 252 251 / 0.93)), var(--grain), var(--original);
   box-shadow: 0 2px 3px rgb(80 20 40 / 0.12), 0 18px 40px -12px rgb(80 20 40 / 0.28);
@@ -49,7 +50,6 @@ img { max-width: 100%; display: block; }
   box-shadow: 0 10px 24px -10px rgb(30 40 90 / 0.3);
 }
 @media (max-width: 640px) {
-  .sheet { margin-inline: 16px; }
   .sheet::before { inset: 8px -6px -10px 6px; }
 }
 
@@ -77,7 +77,9 @@ img { max-width: 100%; display: block; }
   line-height: 1.45;
   text-shadow: 0.7px 0.5px 0 rgb(31 42 90 / 0.16);
   max-width: 62ch;
+  text-wrap: pretty;
 }
+.checks li, .circuit h3 { text-wrap: pretty; }
 
 /* header strip */
 .strip {
@@ -142,11 +144,11 @@ h1 {
   height: auto;
   aspect-ratio: 3 / 4;
   object-fit: cover;
-  object-position: 50% 30%;
   margin-inline: auto;
   transform: rotate(-2.2deg);
-  border: 6px solid #fff;
-  box-shadow: 0 2px 3px rgb(0 0 0 / 0.15), 0 10px 18px -8px rgb(0 0 0 / 0.35);
+  /* a print laid on the form: white photo border, shadow tinted like the sheet's */
+  border: 6px solid var(--original);
+  box-shadow: 0 2px 3px rgb(80 20 40 / 0.16), 0 10px 18px -8px rgb(80 20 40 / 0.36);
 }
 .carnet figcaption { text-align: center; margin-top: 12px; font-family: var(--f-type), monospace; color: var(--carbon); font-size: 0.95rem; }
 
@@ -171,6 +173,11 @@ h1 {
 .btn:active { transform: translateY(1px); }
 .alt { font-size: 0.98rem; color: var(--form-soft); overflow-wrap: anywhere; }
 .alt:hover { color: var(--sello); }
+/* fingers: the text links get a full-height tap area */
+@media (pointer: coarse) {
+  .alt { padding-block: 10px; }
+  .auth { gap: 4px; }
+}
 
 /* the stamp: one authored moment */
 .stamp { color: var(--sello); pointer-events: none; }
@@ -203,7 +210,11 @@ h1 {
   }
 }
 /* reaching for WhatsApp: the stamp rises off the paper, ready to come down again */
-.stamped:has(.btn:hover, .btn:focus-visible) .stamp-hero { translate: 0 -5px; scale: 1.035; opacity: 0.78; }
+/* hover only where a pointer can hover, so a tap doesn't leave the stamp hanging when the visitor comes back from WhatsApp */
+.stamped:has(.btn:focus-visible) .stamp-hero { translate: 0 -5px; scale: 1.035; opacity: 0.78; }
+@media (hover: hover) {
+  .stamped:has(.btn:hover) .stamp-hero { translate: 0 -5px; scale: 1.035; opacity: 0.78; }
+}
 @media (prefers-reduced-motion: no-preference) {
   html.js .stamp-hero:not(.struck), html.js .stamp-ghost:not(.struck) { opacity: 0; }
 }
@@ -296,16 +307,12 @@ h1 {
   .fields { border-right: 0; border-bottom: 2px solid var(--form); }
   .side { grid-template-columns: 0.8fr 1.2fr; grid-template-rows: auto; }
   .carnet { border-bottom: 0; border-right: 1px solid var(--form); padding: 20px 16px 14px; }
-  .carnet img { width: 88%; }
+  .carnet img { width: min(64%, 240px); }
+  .auth { justify-content: center; }
 }
-@media (max-width: 520px) {
-  /* label sits above its value */
-  .row { grid-template-columns: minmax(0, 1fr); gap: 8px; padding-block: 12px; }
-  .row > .label { justify-self: start; }
-  .row-main .label { margin-top: 0; }
-  .form-sub, .form-no { display: block; margin: 2px 0 0; }
-  .strip nav a:not(.strip-wa):not([href="#contacto"]) { display: none; }
-  /* bring the authorization up beside the headline; the photo follows Gestiona */
+/* phones, upright or turned sideways: the authorization comes up right under the headline,
+   so the WhatsApp button is never a long scroll away; the photo follows Gestiona */
+@media (max-width: 520px), (max-width: 860px) and (max-height: 500px) {
   .orden { display: flex; flex-direction: column; }
   .fields, .side { display: contents; }
   .o-prestador { order: 1; }
@@ -314,9 +321,17 @@ h1 {
   .o-diag { order: 4; }
   .o-gestiona { order: 5; }
   .carnet { order: 6; border-right: 0; border-bottom: 1px solid var(--form); }
-  .carnet img { width: 48%; }
+  .carnet img { width: min(48%, 200px); }
   .o-modalidad { order: 7; border-bottom: 0; }
   .auth .label { display: none; }
+}
+@media (max-width: 520px) {
+  /* label sits above its value */
+  .row { grid-template-columns: minmax(0, 1fr); gap: 8px; padding-block: 12px; }
+  .row > .label { justify-self: start; }
+  .row-main .label { margin-top: 0; }
+  .form-sub, .form-no { display: block; margin: 2px 0 0; }
+  .strip nav a:not(.strip-wa):not([href="#contacto"]) { display: none; }
   .stamped { padding-top: 66px; }
   .stamp-hero { width: 190px; left: 60px; }
   .ledger thead { display: none; }
