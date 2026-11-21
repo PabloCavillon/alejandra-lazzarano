@@ -20,7 +20,7 @@ body {
   background: var(--duplicado) var(--grain);
   color: var(--form);
   font-family: var(--f-print), system-ui, sans-serif;
-  font-size: 17px;
+  font-size: 1.0625rem; /* 17px at default, follows the reader's text-size setting */
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   overflow-x: clip;
@@ -130,6 +130,9 @@ h1 {
   text-transform: uppercase;
   color: var(--form);
   text-wrap: balance;
+  /* with enlarged text on a narrow screen, break the long words instead of scrolling sideways */
+  hyphens: auto;
+  overflow-wrap: break-word;
 }
 
 .side { display: grid; grid-template-rows: auto 1fr; }
@@ -166,7 +169,7 @@ h1 {
 }
 .btn:hover { background: var(--sello-deep); }
 .btn:active { transform: translateY(1px); }
-.alt { font-size: 0.98rem; color: var(--form-soft); }
+.alt { font-size: 0.98rem; color: var(--form-soft); overflow-wrap: anywhere; }
 .alt:hover { color: var(--sello); }
 
 /* the stamp: one authored moment */
