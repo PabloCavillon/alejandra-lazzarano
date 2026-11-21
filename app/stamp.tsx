@@ -52,8 +52,7 @@ export default function Stamp() {
     if (!el || matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     // Every visit gets its own impression: slightly different angle and ink pattern.
     const rot = -6 - Math.random() * 6;
-    const ghost = document.querySelector<SVGSVGElement>(".stamp-ghost");
-    for (const s of [el, ghost]) s?.style.setProperty("--rot", `${rot.toFixed(1)}deg`);
+    el.style.setProperty("--rot", `${rot.toFixed(1)}deg`);
     el.querySelector("#ink-blot")?.setAttribute("seed", String(1 + Math.floor(Math.random() * 900)));
 
     const matrix = el.querySelector<SVGFEColorMatrixElement>("#ink-mask")!;
@@ -63,9 +62,6 @@ export default function Stamp() {
       el.classList.add("struck");
       matrix.setAttribute("values", "0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -2.2 1.25");
       el.animate(strikeFrames(rot, from), { duration: FALL + SPRING, delay, fill: "backwards" });
-      // the pressure carries through to the pink copy underneath
-      ghost?.classList.add("struck");
-      ghost?.animate([{ opacity: 0 }, { opacity: 0.34 }], { duration: 700, delay: delay + FALL, easing: "ease-out", fill: "backwards" });
       setTimeout(() => {
         spreadInk(matrix);
         // the paper and the button take the hit
@@ -103,7 +99,7 @@ export default function Stamp() {
           <feComposite in="d" in2="mask" operator="in" />
         </filter>
       </defs>
-      <g id="stamp-art" filter="url(#ink)" fill="none" stroke="currentColor">
+      <g filter="url(#ink)" fill="none" stroke="currentColor">
         <rect x="6" y="6" width="308" height="108" rx="10" strokeWidth="6" />
         <rect x="16" y="16" width="288" height="88" rx="5" strokeWidth="2" />
         <text x="160" y="77" textAnchor="middle" textLength="258" lengthAdjust="spacingAndGlyphs" fill="currentColor" stroke="none" className="stamp-word">

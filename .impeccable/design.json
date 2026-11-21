@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-21T12:00:00Z",
+  "generatedAt": "2026-11-21T05:02:22.796Z",
   "title": "Design System: Alejandra Lazzarano · Gestión de obras sociales",
   "extensions": {
     "colorMeta": {
@@ -185,11 +185,6 @@
         "name": "carbon-offset",
         "value": "text-shadow: 0.7px 0.5px 0 rgb(31 42 90 / 0.16)",
         "purpose": "Faint carbon offset behind typed values only."
-      },
-      {
-        "name": "carbon-ghost",
-        "value": "opacity: 0.34; mix-blend-mode: multiply; filter: blur(0.7px)",
-        "purpose": "The stamp's carbon ghost on the pink duplicate, behind the sheet and the celeste copy."
       }
     ],
     "motion": [
@@ -224,26 +219,17 @@
         "purpose": "Stamp lifts (-5px, 1.035, 0.78 opacity) while the button is hovered (hover-capable devices only) or keyboard-focused."
       },
       {
-        "name": "ghost-fade",
-        "value": "700ms ease-out, opacity 0 to 0.34, starting at contact (after the 190ms fall)",
-        "purpose": "The strike's carbon ghost appearing on the pink duplicate."
-      },
-      {
         "name": "pre-paint",
         "value": "html.js + prefers-reduced-motion: no-preference",
-        "purpose": "Stamp and ghost held at opacity 0 until they strike (.struck), so they never flash."
+        "purpose": "Stamp held at opacity 0 until they strike (.struck), so they never flash."
       },
       {
         "name": "reduced-motion",
         "value": "prefers-reduced-motion: reduce",
-        "purpose": "Stamp (static at -9deg) and its ghost visible; no strike, lift, fade, transitions or smooth scroll."
+        "purpose": "Stamp (static at -9deg) visible; no strike, lift, fade, transitions or smooth scroll."
       }
     ],
     "breakpoints": [
-      {
-        "name": "ghost",
-        "value": "min-width: 1300px"
-      },
       {
         "name": "stack",
         "value": "max-width: 860px"
@@ -348,7 +334,7 @@
       "Two voices only: condensed printed grotesk (Archivo, width axis) for what the form prints; Courier Prime for what is typed in.",
       "Label + value field rows on a ruled grid are the grammar of every section.",
       "Square, ruled geometry; the only rounding is 3px on actionable controls (2px on the focus ring).",
-      "One violet rubber stamp, one strike, with per-visit angle and ink pattern, carried through as a carbon ghost onto the duplicate."
+      "One violet rubber stamp, one strike, with per-visit angle and ink pattern."
     ],
     "rules": [
       {
@@ -358,7 +344,7 @@
       },
       {
         "name": "The One Stamp Rule",
-        "body": "Sello Violet appears as a full mark exactly once per surface: the AUTORIZADO stamp. Its only echo is that same strike carried through as a faint carbon ghost onto the pink duplicate; it is the same impression, not a second stamp. Everywhere else violet is limited to interaction states (focus, selection, hover).",
+        "body": "Sello Violet appears as a full mark exactly once per surface: the AUTORIZADO stamp. Everywhere else violet is limited to interaction states (focus, selection, hover).",
         "section": "colors"
       },
       {
@@ -389,7 +375,7 @@
     ],
     "donts": [
       "Don't set headings, labels, buttons or navigation in the typewriter face.",
-      "Don't add a second stamp or a second full violet mark to a surface; the carbon ghost is the one strike carried through, not a new mark.",
+      "Don't add a second stamp or a second full violet mark to a surface. A second impression, even a faint carbon echo, reads as a duplicate stamp.",
       "Don't round containers, label boxes or check boxes; 3px belongs to actionable controls only.",
       "Don't put shadows on anything that is not a physical sheet or print laid on the form.",
       "Don't introduce colors outside the three inks and three paper copies."

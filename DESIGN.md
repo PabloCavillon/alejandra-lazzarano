@@ -117,7 +117,7 @@ Density is that of a real form: ruled rows, hairline and double-weight rules, ti
 - Two voices only: condensed printed grotesk (Archivo, width axis) for what the form prints; Courier Prime for what is typed in.
 - Label + value field rows on a ruled grid are the grammar of every section.
 - Square, ruled geometry; the only rounding is 3px on actionable controls (2px on the focus ring).
-- One violet rubber stamp, one strike, with per-visit angle and ink pattern, carried through as a carbon ghost onto the duplicate.
+- One violet rubber stamp, one strike, with per-visit angle and ink pattern.
 
 ## Colors
 
@@ -128,7 +128,7 @@ A form palette: one print ink, one typing black, one stamp violet, and three pap
 - **Form Ink Soft** (form-ink-soft): secondary print: part-head subtitles, ledger column heads, footer, dotted sub-rules, the alternate mail link, the scrollbar thumb.
 
 ### Secondary
-- **Sello Violet** (sello-violet): the rubber stamp only (and its carbon ghost on the duplicate), plus the focus ring, text selection and the alternate link's hover. It is the ink of authorization.
+- **Sello Violet** (sello-violet): the rubber stamp only, plus the focus ring, text selection and the alternate link's hover. It is the ink of authorization.
 - **Sello Violet Deep** (sello-violet-deep): primary button hover; the button takes on the stamp's ink when reached for.
 
 ### Neutral
@@ -140,7 +140,7 @@ A form palette: one print ink, one typing black, one stamp violet, and three pap
 ### Named Rules
 **The Material Ink Rule.** A color names a material, not a mood: print is Form Ink, typed values are Carbon Type, the stamp is Sello Violet, paper is one of the three copies. A new element takes the ink of what it would physically be on the form.
 
-**The One Stamp Rule.** Sello Violet appears as a full mark exactly once per surface: the AUTORIZADO stamp. Its only echo is that same strike carried through as a faint carbon ghost onto the pink duplicate; it is the same impression, not a second stamp. Everywhere else violet is limited to interaction states (focus, selection, hover).
+**The One Stamp Rule.** Sello Violet appears as a full mark exactly once per surface: the AUTORIZADO stamp. Everywhere else violet is limited to interaction states (focus, selection, hover).
 
 **Known drift (not tokens).** One off-palette value remains and should not be reused: the talón holes' rim tint (`rgb(110 40 70 / 0.45)`), a one-off near the pink shadow family. The photo print's border is Original Sheet.
 
@@ -174,13 +174,13 @@ A single centered sheet, max 1180px and always at least clamp(16px, 3vw, 40px) s
 
 The opening orden is a two-column grid: fields on the left and a side column (clamp(260px, 27vw, 330px)) holding the photo carnet over the authorization box, divided by a 2px vertical rule. Part heads take generous top padding (clamp(36px, 6vw, 72px)) and sit on a 2px rule.
 
-**Responsive.** At ≥1300px the stamp's carbon ghost shows in the pink margin to the right of the sheet; below that it is not rendered. At ≤860px the orden stacks and the side column becomes two cells side by side (photo 0.8fr | authorization 1.2fr); the photo grows to min(64%, 240px) and the authorization content is vertically centered in its cell. On phones, at ≤520px and also at ≤860px when the height is ≤500px (phone landscape), the authorization is reordered to sit directly under the headline (its label dropped), and the photo shrinks to min(48%, 200px) and follows the Gestiona row, so the primary action is never a long scroll away. At ≤520px rows also collapse to label-above-value (8px gap, 12px vertical padding), the strip's subtitle and form number drop onto their own lines, the nav keeps only Contacto and WhatsApp, the stamp narrows to 190px, and the ledger reflows into two-column cards with the task spanning full width.
+**Responsive.** At ≤860px the orden stacks and the side column becomes two cells side by side (photo 0.8fr | authorization 1.2fr); the photo grows to min(64%, 240px) and the authorization content is vertically centered in its cell. On phones, at ≤520px and also at ≤860px when the height is ≤500px (phone landscape), the authorization is reordered to sit directly under the headline (its label dropped), and the photo shrinks to min(48%, 200px) and follows the Gestiona row, so the primary action is never a long scroll away. At ≤520px rows also collapse to label-above-value (8px gap, 12px vertical padding), the strip's subtitle and form number drop onto their own lines, the nav keeps only Contacto and WhatsApp, the stamp narrows to 190px, and the ledger reflows into two-column cards with the task spanning full width.
 
 **Touch.** Under a coarse pointer the text links take 10px block padding for a 44px tap area, and the authorization's gap tightens to compensate.
 
 ## Elevation & Depth
 
-Depth is paper physics, not UI elevation. The sheet sits on the pink ground with a warm two-layer shadow; the celeste triplicate sits behind it offset and rotated 0.5deg; the passport photo is a print laid on top, rotated -2.2deg with a white border. Behind both copies, the stamp's carbon ghost sits on the pink duplicate itself (multiply, 0.34 opacity, 0.7px blur): the pressure of the strike carried through the stack. The talón's holes and notches are cut through the sheet, so there depth reads as the pink copy showing beneath. Inside the sheet everything is flat and ruled.
+Depth is paper physics, not UI elevation. The sheet sits on the pink ground with a warm two-layer shadow; the celeste triplicate sits behind it offset and rotated 0.5deg; the passport photo is a print laid on top, rotated -2.2deg with a white border. The talón's holes and notches are cut through the sheet, so there depth reads as the pink copy showing beneath. Inside the sheet everything is flat and ruled.
 
 ### Shadow Vocabulary
 - **Sheet on copy** (`box-shadow: 0 2px 3px rgb(80 20 40 / 0.12), 0 18px 40px -12px rgb(80 20 40 / 0.28)`): the original sheet on the pink duplicate only.
@@ -193,7 +193,7 @@ Depth is paper physics, not UI elevation. The sheet sits on the pink ground with
 
 ## Shapes
 
-Square and ruled. Form structure is drawn with 1px Form Ink rules (rows, label boxes), 2px rules (part boundaries, the orden's column divider), 1px dotted Form Ink Soft rules (sub-items in lists and the ledger) and one perforation: the talón's tear line, a row of punched round holes (about 4.6px across, every 11px, inset 22px from the sheet edges) with a half-circle die-cut notch (20px) at each edge of the sheet. Those holes and notches are the only round geometry; they are cuts, not shapes. Label boxes and check boxes are sharp-cornered. The only rounding is 3px on the two actionable controls (primary button, strip chip) and 2px on the focus ring. Slight rotation is reserved for physical objects laid on the form: the triplicate (0.5deg), the photo (-2.2deg) and the stamp (-6 to -12deg, its ghost 2.5deg further).
+Square and ruled. Form structure is drawn with 1px Form Ink rules (rows, label boxes), 2px rules (part boundaries, the orden's column divider), 1px dotted Form Ink Soft rules (sub-items in lists and the ledger) and one perforation: the talón's tear line, a row of punched round holes (about 4.6px across, every 11px, inset 22px from the sheet edges) with a half-circle die-cut notch (20px) at each edge of the sheet. Those holes and notches are the only round geometry; they are cuts, not shapes. Label boxes and check boxes are sharp-cornered. The only rounding is 3px on the two actionable controls (primary button, strip chip) and 2px on the focus ring. Slight rotation is reserved for physical objects laid on the form: the triplicate (0.5deg), the photo (-2.2deg) and the stamp (-6 to -12deg).
 
 ## Components
 
@@ -216,7 +216,8 @@ Square and ruled. Form structure is drawn with 1px Form Ink rules (rows, label b
 - **Nav:** Archivo 550 at width 85%, 0.95rem, no underline; hover draws a 1px bottom rule in currentColor; focus ring switches to Duplicado Pink on the dark band.
 
 ### Check List
-- **Style:** list of typed items separated by dotted rules, each led by a 20px square box (1.5px Form Ink) holding a typed X in Carbon Type. The X means "this reason applies", not approval.
+- **Style:** list of typed items separated by dotted rules, each led by a 20px square box (1.5px Form Ink). The visitor ticks the reasons that apply to them: a native checkbox (appearance none) shows a typed X in Carbon Type only when checked. The X means "this reason applies", not approval.
+- **Behavior:** each tick lands as one key strike (scale 1.5 to 1 with a 0.6px blur clearing, 140ms; none under reduced motion) and its reason joins the prefilled WhatsApp and mail message. A short print hint above the list says so.
 
 ### Ledger
 - **Style:** borderless table with tabular numerals; label-style column heads in Form Ink Soft over a 1px rule; typed cells separated by dotted rules; the place column printed in Form Ink. Reflows to cards at ≤520px.
@@ -227,6 +228,9 @@ Square and ruled. Form structure is drawn with 1px Form Ink rules (rows, label b
 
 ### Talón
 - **Style:** the closing contact part, grounded in 30% celeste mixed into the original, opened by a perforation of punched holes through which the pink copy shows, each with a darker rim, and a die-cut half-circle notch at both sheet edges where the tear starts. Holds the primary button, the mail link and a signature line.
+- **Blanks:** two fill-in fields (obras sociales, prestaciones por mes) typed in Courier Prime on a 1.5px dotted Form Ink rule, caret in Sello Violet; on focus the rule turns solid Sello Violet over a 5% violet wash. Placeholders start with "ej.:" so they never read as filled values.
+- **Resumen:** a typed "Va en el mensaje" row that echoes what was ticked and filled (aria-live). It is typing, not a second stamp; the One Stamp Rule holds.
+- **Message:** every WhatsApp and mail link on the page carries one message built from the ticks and blanks; with nothing filled (and without JS) it is the plain greeting.
 
 ### AUTORIZADO Stamp (signature)
 A Sello Violet rubber stamp drawn in SVG: double rounded frame (6px and 2px strokes) around "AUTORIZADO" in Archivo 800 at width 70%, at 0.9 opacity, roughened by a displacement filter and an uneven ink-blot mask. It sits rotated over the primary button so its frame crosses the button's top-right corner while the word stays on paper.
@@ -234,9 +238,8 @@ A Sello Violet rubber stamp drawn in SVG: double rounded frame (6px and 2px stro
 - **Per visit:** angle randomized between -6 and -12deg and a new ink-blot seed, so no two impressions match.
 - **Hover:** while the button is hovered (only on devices that can hover) or keyboard-focused, the stamp lifts (−5px, 1.035 scale, 0.78 opacity) on an overshoot curve, ready to come down again. A tap never leaves it hanging.
 - **Re-strike:** clicking the button strikes again from 1.18x.
-- **Carbon ghost:** the same stamp art, reused rather than redrawn, printed on the pink duplicate behind the sheet and the celeste copy at 0.34 opacity, multiply, 0.7px blur, rotated 2.5deg further than the stamp. It peeks out into the pink margin only at ≥1300px, and fades in over 700ms at the moment of contact.
-- **Pre-paint:** a head script marks `html.js` so, when motion is allowed, the stamp and its ghost wait hidden until they strike, instead of flashing.
-- **Reduced motion:** stamp and ghost visible and static (stamp at -9deg); no strike, no lift, no smooth scroll.
+- **Pre-paint:** a head script marks `html.js` so, when motion is allowed, the stamp waits hidden until they strike, instead of flashing.
+- **Reduced motion:** stamp visible and static (stamp at -9deg); no strike, no lift, no smooth scroll.
 
 ## Do's and Don'ts
 
@@ -252,7 +255,7 @@ A Sello Violet rubber stamp drawn in SVG: double rounded frame (6px and 2px stro
 
 ### Don't:
 - **Don't** set headings, labels, buttons or navigation in the typewriter face.
-- **Don't** add a second stamp or a second full violet mark to a surface; the carbon ghost is the one strike carried through, not a new mark.
+- **Don't** add a second stamp or a second full violet mark to a surface. A second impression, even a faint carbon echo, reads as a duplicate stamp.
 - **Don't** round containers, label boxes or check boxes; 3px belongs to actionable controls only.
 - **Don't** put shadows on anything that is not a physical sheet or print laid on the form.
 - **Don't** introduce colors outside the three inks and three paper copies.

@@ -1,9 +1,5 @@
 import Stamp from "./stamp";
-
-// Contact data taken from her CV; change here if she uses another line for the service.
-const WHATSAPP = "https://wa.me/5492612402277?text=" +
-  encodeURIComponent("Hola Alejandra, quiero consultarte por la gestión de mis obras sociales.");
-const MAIL = "mailto:alazzarano@hotmail.com?subject=" + encodeURIComponent("Consulta por gestión de obras sociales");
+import { IntakeProvider, MailLink, Motivos, Resumen, TalonFields, WaLink } from "./intake";
 
 const rechazos = [
   "Falta de autorización previa",
@@ -36,6 +32,7 @@ const antecedentes = [
 export default function Home() {
   return (
     <main>
+      <IntakeProvider>
       <div className="sheet">
         <header className="strip">
           <p className="form-title">
@@ -47,9 +44,7 @@ export default function Home() {
             <a href="#circuito">Qué hago</a>
             <a href="#antecedentes">Antecedentes</a>
             <a href="#contacto">Contacto</a>
-            <a className="strip-wa" href={WHATSAPP} target="_blank" rel="noopener">
-              WhatsApp<span className="sr"> (se abre en otra pestaña)</span>
-            </a>
+            <WaLink className="strip-wa">WhatsApp</WaLink>
           </nav>
         </header>
 
@@ -94,20 +89,12 @@ export default function Home() {
               <figcaption>A. Lazzarano</figcaption>
             </figure>
             <div className="auth">
-              {/* carbon ghost of the stamp on the pink duplicate, peeking out past the sheet's edge */}
-              <svg className="stamp stamp-ghost" viewBox="0 0 320 120" aria-hidden="true">
-                <use href="#stamp-art" />
-              </svg>
               <span className="label">Autorización</span>
               <div className="stamped">
                 <Stamp />
-                <a className="btn" href={WHATSAPP} target="_blank" rel="noopener">
-                  Escribime por WhatsApp<span className="sr"> (se abre en otra pestaña)</span>
-                </a>
+                <WaLink className="btn">Escribime por WhatsApp</WaLink>
               </div>
-              <a className="alt" href={MAIL}>
-                o mandame un mail
-              </a>
+              <MailLink className="alt">o mandame un mail</MailLink>
             </div>
           </aside>
         </section>
@@ -123,14 +110,10 @@ export default function Home() {
           </div>
           <div className="row">
             <span className="label">Motivos de débito</span>
-            <ul className="checks">
-              {rechazos.map((r) => (
-                <li key={r}>
-                  <span className="box" aria-hidden="true" />
-                  {r}
-                </li>
-              ))}
-            </ul>
+            <div>
+              <p className="hint">Marcá los que te pasan: van en tu mensaje.</p>
+              <Motivos items={rechazos} />
+            </div>
           </div>
         </section>
 
@@ -187,22 +170,22 @@ export default function Home() {
             Talón para el prestador <span>Contame cómo facturás hoy</span>
           </h2>
           <div className="row">
-            <span className="label">Para la charla</span>
-            <p className="typed">Con qué obras sociales trabajás y cuántas prestaciones hacés por mes.</p>
+            <span className="label">Honorarios</span>
+            <p className="typed">Se cotizan según con qué obras sociales trabajás y cuántas prestaciones hacés. Lo vemos en la primera charla.</p>
           </div>
           <div className="row">
-            <span className="label">Honorarios</span>
-            <p className="typed">Se cotizan según eso. Lo vemos en la primera charla.</p>
+            <span className="label">Para la charla</span>
+            <TalonFields />
+          </div>
+          <div className="row">
+            <span className="label">Va en el mensaje</span>
+            <Resumen />
           </div>
           <div className="row">
             <span className="label">Contacto</span>
             <div className="firma">
-              <a className="btn" href={WHATSAPP} target="_blank" rel="noopener">
-                Escribime por WhatsApp<span className="sr"> (se abre en otra pestaña)</span>
-              </a>
-              <a className="alt" href={MAIL}>
-                alazzarano@hotmail.com
-              </a>
+              <WaLink className="btn">Escribime por WhatsApp</WaLink>
+              <MailLink className="alt">alazzarano@hotmail.com</MailLink>
               <span className="label firma-line">Firma y sello del prestador</span>
             </div>
           </div>
@@ -212,6 +195,7 @@ export default function Home() {
           <p>Alejandra Lazzarano · Gestión de facturación, autorizaciones y obras sociales · Mendoza, Argentina</p>
         </footer>
       </div>
+      </IntakeProvider>
     </main>
   );
 }

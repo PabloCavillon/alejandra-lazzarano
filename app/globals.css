@@ -193,22 +193,6 @@ h1 {
   /* hover lift uses translate/scale, separate from the strike's transform */
   transition: translate 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), scale 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.25s ease-out;
 }
-/* below the sheet (and the celeste copy), only shown where the pink margin is wide enough to read it */
-.stamp-ghost { display: none; }
-@media (min-width: 1300px) {
-  .stamp-ghost {
-    display: block;
-    position: absolute;
-    z-index: -2;
-    width: 210px;
-    top: 70px;
-    right: calc(-1 * min((100vw - 1180px) / 2 - 18px, 150px));
-    opacity: 0.34;
-    mix-blend-mode: multiply;
-    filter: blur(0.7px);
-    transform: rotate(calc(var(--rot, -9deg) + 2.5deg));
-  }
-}
 /* reaching for WhatsApp: the stamp rises off the paper, ready to come down again */
 /* hover only where a pointer can hover, so a tap doesn't leave the stamp hanging when the visitor comes back from WhatsApp */
 .stamped:has(.btn:focus-visible) .stamp-hero { translate: 0 -5px; scale: 1.035; opacity: 0.78; }
@@ -216,7 +200,7 @@ h1 {
   .stamped:has(.btn:hover) .stamp-hero { translate: 0 -5px; scale: 1.035; opacity: 0.78; }
 }
 @media (prefers-reduced-motion: no-preference) {
-  html.js .stamp-hero:not(.struck), html.js .stamp-ghost:not(.struck) { opacity: 0; }
+  html.js .stamp-hero:not(.struck) { opacity: 0; }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
@@ -243,9 +227,6 @@ h1 {
 
 .checks { list-style: none; margin: 0; padding: 0; max-width: 640px; }
 .checks li {
-  display: flex;
-  gap: 14px;
-  align-items: center;
   padding: 10px 0;
   border-bottom: 1px dotted var(--form-soft);
   font-family: var(--f-type), monospace;
@@ -254,11 +235,42 @@ h1 {
 }
 .checks li:first-child { padding-top: 0; }
 .checks li:last-child { border-bottom: 0; padding-bottom: 0; }
-/* typed X in the box: the reason applies, not that it was approved */
-.box { flex: none; width: 20px; height: 20px; border: 1.5px solid var(--form); position: relative; }
-.box::before, .box::after { content: ""; position: absolute; left: 50%; top: 50%; width: 15px; height: 2px; background: var(--carbon); }
+.checks label { display: flex; gap: 14px; align-items: center; cursor: pointer; }
+.hint { margin: 0 0 12px; font-stretch: 85%; font-weight: 600; font-size: 0.92rem; color: var(--form-soft); }
+/* the visitor types an X in the box: that reason applies to them and goes in the message */
+.box { appearance: none; margin: 0; flex: none; width: 20px; height: 20px; border: 1.5px solid var(--form); background: var(--original); position: relative; cursor: pointer; }
+.box::before, .box::after { content: ""; position: absolute; left: 50%; top: 50%; width: 15px; height: 2px; background: var(--carbon); opacity: 0; }
 .box::before { transform: translate(-50%, -50%) rotate(45deg); }
 .box::after { transform: translate(-50%, -50%) rotate(-45deg); }
+.box:checked::before, .box:checked::after { opacity: 1; }
+@media (hover: hover) { .checks label:hover .box:not(:checked) { border-color: var(--sello); } }
+@media (prefers-reduced-motion: no-preference) {
+  /* one key strike: the typebar hits hard and the ink settles */
+  .box:checked::before, .box:checked::after { animation: keystrike 140ms cubic-bezier(0.2, 0.9, 0.3, 1); }
+}
+@keyframes keystrike { from { scale: 1.5; opacity: 0.35; filter: blur(0.6px); } }
+
+/* blanks on the talón, filled in with the same typewriter */
+.blanks { display: grid; gap: 14px; max-width: 640px; }
+.blank { display: grid; gap: 4px; }
+.blank-name { font-stretch: 85%; font-weight: 600; font-size: 0.92rem; color: var(--form-soft); }
+.blank-input {
+  font: inherit;
+  font-family: var(--f-type), monospace;
+  font-size: 1.06rem;
+  color: var(--carbon);
+  background: transparent;
+  border: 0;
+  border-bottom: 1.5px dotted var(--form);
+  border-radius: 0;
+  padding: 4px 0 3px;
+  caret-color: var(--sello);
+  width: 100%;
+}
+.blank-input::placeholder { color: var(--form-soft); opacity: 1; }
+.blank-input:focus-visible { outline: 0; border-bottom: 1.5px solid var(--sello); background: rgb(91 63 158 / 0.05); }
+.blank-short .blank-input { max-width: 12ch; }
+.resumen { min-height: 1.45em; }
 
 .circuit { list-style: none; margin: 0; padding: 0; }
 .circuit .num { min-width: 2.2em; text-align: center; font-size: 0.9rem; }
