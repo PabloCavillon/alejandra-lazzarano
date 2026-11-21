@@ -1,0 +1,93 @@
+{
+  "title": "Elegí el mundo visual de la landing",
+  "question": "La tirada asignó \"Turno de riego\". Quedate con esa, tomá la alternativa o pedí otra mano.",
+  "options": [
+    {
+      "id": "assigned",
+      "kind": "assigned",
+      "label": "Turno de riego",
+      "kicker": "THE ROLL",
+      "lineage": "Las acequias de Mendoza y el tomero que abre cada compuerta a su turno",
+      "thesis": "El cobro es agua mendocina: llega a la finca solo si alguien abre cada compuerta a tiempo.",
+      "palette": ["#C8873E", "#E9B872", "#1E4D5C", "#2E9CB8", "#2F5A2A"],
+      "materials": ["tierra seca soleada", "piedra de acequia", "compuertas de chapa", "hileras de álamos"],
+      "viewport": "Un canal de piedra cruza en diagonal un campo ocre; cuatro compuertas rotuladas (Prestación, Autorización, Facturación, Cobro); titular grande a la izquierda, su foto en la toma de agua y el botón de WhatsApp en la primera compuerta.",
+      "risk": "Si el canal se dibuja tímido queda como ilustración decorativa y no como el recorrido del cobro.",
+      "raised": [
+        {"from": "challenger-installer", "raise": "Las compuertas se abren en orden estricto, una por paso: nadie salta de la prestación al cobro."},
+        {"from": "challenger-busytown", "raise": "Cada pieza del canal lleva su rótulo impreso en palabras llanas: rechazo, débito, orden vencida."},
+        {"from": "challenger-sixpack", "raise": "El agua avanza con movimiento amortiguado y físico, nunca a saltos."},
+        {"from": "challenger-sun", "raise": "La página vive entera en el ocre del sol mendocino; el azul del agua es lo único que corre."}
+      ]
+    },
+    {
+      "id": "model-pick",
+      "kind": "pick",
+      "label": "Orden autorizada",
+      "kicker": "IMPECCABLE’S PICK",
+      "lineage": "La orden de prestación en papel carbónico con el sello violeta AUTORIZADO",
+      "thesis": "La página es la orden que vuelve sellada: lo que el médico manda, Alejandra lo hace pasar.",
+      "palette": ["#F2C6CF", "#BFD7EA", "#5B3F9E", "#1A1A1A"],
+      "materials": ["papel duplicado rosa y celeste", "tinta de sello violeta", "campos de formulario"],
+      "viewport": "Una orden en triplicado ocupa la pantalla; el titular va en los campos y un sello AUTORIZADO cae sobre el botón de WhatsApp.",
+      "risk": "Es la metáfora más previsible del rubro y puede sentirse burocrática."
+    },
+    {
+      "id": "challenger-installer",
+      "kind": "challenger",
+      "catalogId": "digital-design-canon-shareware-installer-screens",
+      "label": "Instalador shareware",
+      "verdict": "declined",
+      "lineage": "asistentes de instalación de los 90",
+      "thesis": "El trámite como asistente: siguiente, siguiente, finalizar.",
+      "palette": ["#C0C0C0", "#000080", "#FFFFFF", "#008080"],
+      "materials": ["cromo gris biselado", "banner pixelado"],
+      "viewport": "Un diálogo gris centrado con barra de progreso en bloques.",
+      "case": "Pierde en ambos ejes: un médico no se reconoce en una PC de 1994.",
+      "kept": "El paso a paso estricto, sin saltos.",
+      "risk": "Nostalgia ajena al público."
+    },
+    {
+      "id": "challenger-busytown",
+      "kind": "challenger",
+      "catalogId": "graphic-worlds-publishing-busytown-cross-section",
+      "label": "Corte de ciudad ilustrada",
+      "verdict": "declined",
+      "lineage": "libros infantiles en corte",
+      "thesis": "El consultorio en corte, cada objeto con su rótulo.",
+      "palette": ["#B23A2E", "#F2C230", "#5A9A3C", "#FAF6EE"],
+      "materials": ["gouache", "contorno marrón"],
+      "viewport": "Una escena continua de consultorio y obra social sin paredes.",
+      "case": "Pierde en ambos ejes: infantiliza a un público profesional.",
+      "kept": "Todo rotulado en palabras llanas.",
+      "risk": "Tono infantil."
+    },
+    {
+      "id": "challenger-sixpack",
+      "kind": "challenger",
+      "catalogId": "signals-instruments-night-flight-six-pack",
+      "label": "Instrumentos de vuelo nocturno",
+      "verdict": "declined",
+      "lineage": "tablero de avioneta",
+      "thesis": "Seis indicadores que dan calma en la tormenta del cobro.",
+      "palette": ["#0B0B0B", "#F2F2F2", "#5CFF8A", "#FFB000"],
+      "materials": ["panel negro mate", "agujas luminosas"],
+      "viewport": "Seis diales con estado de cobros.",
+      "case": "Pierde en ambos ejes: promete un tablero de datos que el servicio no tiene.",
+      "kept": "Movimiento amortiguado y físico.",
+      "risk": "Promesa de software inexistente."
+    }
+  ],
+  "reroll": {"registers": ["safer", "bolder"]},
+  "canon": true,
+  "canonCard": {
+    "kind": "canon",
+    "label": "El estándar del rubro",
+    "thesis": "Landing de servicio de salud prolija: foto, titular y botón.",
+    "palette": ["#FFFFFF", "#0F5C6E", "#1B1B1B"],
+    "materials": ["grilla limpia", "foto de retrato"],
+    "viewport": "Titular a la izquierda, su foto a la derecha, fila de servicios abajo.",
+    "risk": "Igual a la competencia, a propósito."
+  },
+  "steer": true
+}

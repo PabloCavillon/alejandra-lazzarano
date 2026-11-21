@@ -1,0 +1,325 @@
+:root {
+  --duplicado: #f3c4cf;      /* pink carbon copy: page ground */
+  --triplicado: #bfd7ea;     /* celeste copy under the original */
+  --original: #fcfcfb;       /* the sheet */
+  --form: #1f2a5a;           /* pre-printed form ink */
+  --form-soft: #4a5480;
+  --carbon: #1a1a1a;         /* typed values */
+  --sello: #5b3f9e;          /* rubber stamp violet */
+  --sello-deep: #46307d;
+  --pad: clamp(16px, 4vw, 48px);
+  --labelcol: 9.5rem;
+  --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .55 0 0 0 0 .25 0 0 0 0 .35 0 0 0 .09 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  color-scheme: light;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scrollbar-color: var(--form-soft) var(--duplicado); }
+body {
+  margin: 0;
+  background: var(--duplicado) var(--grain);
+  color: var(--form);
+  font-family: var(--f-print), system-ui, sans-serif;
+  font-size: 17px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: clip;
+}
+::selection { background: var(--sello); color: var(--original); }
+a { color: inherit; text-underline-offset: 0.2em; }
+:focus-visible { outline: 3px solid var(--sello); outline-offset: 3px; border-radius: 2px; }
+img { max-width: 100%; display: block; }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+
+/* the original sheet, with the celeste triplicate peeking out below it */
+.sheet {
+  position: relative;
+  max-width: 1180px;
+  margin: clamp(12px, 3vw, 40px) auto clamp(28px, 5vw, 64px);
+  background: linear-gradient(rgb(252 252 251 / 0.93), rgb(252 252 251 / 0.93)), var(--grain), var(--original);
+  box-shadow: 0 2px 3px rgb(80 20 40 / 0.12), 0 18px 40px -12px rgb(80 20 40 / 0.28);
+}
+.sheet::before {
+  content: "";
+  position: absolute;
+  inset: 10px -8px -12px 10px;
+  background: var(--triplicado);
+  transform: rotate(0.5deg);
+  z-index: -1;
+  box-shadow: 0 10px 24px -10px rgb(30 40 90 / 0.3);
+}
+@media (max-width: 640px) {
+  .sheet { margin-inline: 16px; }
+  .sheet::before { inset: 8px -6px -10px 6px; }
+}
+
+/* printed labels, boxed like form cells */
+.label {
+  justify-self: start;
+  align-self: start;
+  display: inline-block;
+  border: 1px solid var(--form);
+  padding: 3px 7px 2px;
+  font-stretch: 70%;
+  font-weight: 650;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 0.74rem;
+  line-height: 1.3;
+  color: var(--form);
+}
+/* typed onto the original: a faint carbon offset behind each value */
+.typed {
+  font-family: var(--f-type), monospace;
+  color: var(--carbon);
+  margin: 0;
+  font-size: 1.06rem;
+  line-height: 1.45;
+  text-shadow: 0.7px 0.5px 0 rgb(31 42 90 / 0.16);
+  max-width: 62ch;
+}
+
+/* header strip */
+.strip {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px 24px;
+  padding: 14px var(--pad);
+  background: var(--form);
+  color: var(--original);
+}
+.form-title { margin: 0; font-stretch: 75%; font-weight: 800; text-transform: uppercase; letter-spacing: 0.04em; font-size: 1.05rem; }
+.form-no { white-space: nowrap; font-family: var(--f-type), monospace; font-weight: 400; letter-spacing: 0; text-transform: none; margin-left: 0.5em; color: var(--duplicado); }
+.form-sub { font-weight: 500; letter-spacing: 0.02em; margin-left: 0.8em; opacity: 0.75; text-transform: none; font-stretch: 90%; }
+.strip nav { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 20px; }
+.strip nav a { text-decoration: none; font-stretch: 85%; font-weight: 550; font-size: 0.95rem; padding: 4px 0; border-bottom: 1px solid transparent; }
+.strip nav a:hover { border-bottom-color: currentColor; }
+.strip :focus-visible { outline-color: var(--duplicado); }
+.strip nav .strip-wa { background: var(--duplicado); color: var(--form); padding: 4px 12px; border-radius: 3px; font-weight: 700; }
+.strip nav .strip-wa:hover { background: var(--original); border-bottom-color: transparent; }
+
+/* ruled field rows: the grammar of the whole page */
+.row {
+  display: grid;
+  grid-template-columns: var(--labelcol) minmax(0, 1fr);
+  gap: 16px;
+  align-items: start;
+  padding: 16px var(--pad);
+  border-bottom: 1px solid var(--form);
+}
+
+/* the orden */
+.orden {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) clamp(260px, 27vw, 330px);
+  border-bottom: 2px solid var(--form);
+}
+.fields { border-right: 2px solid var(--form); }
+.fields .row:last-child { border-bottom: 0; }
+.row-main { padding-block: clamp(22px, 4vw, 44px); }
+.row-main .label { margin-top: 0.7em; }
+h1 {
+  margin: 0;
+  font-stretch: 62%;
+  font-weight: 800;
+  font-size: clamp(2.9rem, 7.4vw, 6rem);
+  line-height: 0.92;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  color: var(--form);
+  text-wrap: balance;
+}
+
+.side { display: grid; grid-template-rows: auto 1fr; }
+.carnet { position: relative; margin: 0; padding: 26px 26px 18px; border-bottom: 1px solid var(--form); }
+.carnet img {
+  width: 56%;
+  height: auto;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  object-position: 50% 30%;
+  margin-inline: auto;
+  transform: rotate(-2.2deg);
+  border: 6px solid #fff;
+  box-shadow: 0 2px 3px rgb(0 0 0 / 0.15), 0 10px 18px -8px rgb(0 0 0 / 0.35);
+}
+.carnet figcaption { text-align: center; margin-top: 12px; font-family: var(--f-type), monospace; color: var(--carbon); font-size: 0.95rem; }
+
+.auth { position: relative; display: flex; flex-direction: column; align-items: flex-start; gap: 14px; padding: 20px 26px 30px; }
+/* the stamp lands on the button: its frame crosses the button's top-right corner, the word stays on paper */
+.stamped { position: relative; padding-top: 74px; }
+.btn {
+  position: relative;
+  display: inline-block;
+  background: var(--form);
+  color: var(--original);
+  text-decoration: none;
+  font-stretch: 80%;
+  font-weight: 700;
+  font-size: 1.12rem;
+  letter-spacing: 0.01em;
+  padding: 15px 22px;
+  border-radius: 3px;
+  transition: background-color 0.2s ease-out, transform 0.2s ease-out;
+}
+.btn:hover { background: var(--sello-deep); }
+.btn:active { transform: translateY(1px); }
+.alt { font-size: 0.98rem; color: var(--form-soft); }
+.alt:hover { color: var(--sello); }
+
+/* the stamp: one authored moment */
+.stamp { color: var(--sello); pointer-events: none; }
+.stamp-word { font-family: var(--f-print), sans-serif; font-stretch: 70%; font-weight: 800; font-size: 56px; }
+.stamp-hero {
+  position: absolute;
+  z-index: 1;
+  width: 210px;
+  top: 0;
+  left: 34px;
+  opacity: 0.9;
+  transform: rotate(var(--rot, -9deg));
+  /* hover lift uses translate/scale, separate from the strike's transform */
+  transition: translate 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), scale 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.25s ease-out;
+}
+/* below the sheet (and the celeste copy), only shown where the pink margin is wide enough to read it */
+.stamp-ghost { display: none; }
+@media (min-width: 1300px) {
+  .stamp-ghost {
+    display: block;
+    position: absolute;
+    z-index: -2;
+    width: 210px;
+    top: 70px;
+    right: calc(-1 * min((100vw - 1180px) / 2 - 18px, 150px));
+    opacity: 0.34;
+    mix-blend-mode: multiply;
+    filter: blur(0.7px);
+    transform: rotate(calc(var(--rot, -9deg) + 2.5deg));
+  }
+}
+/* reaching for WhatsApp: the stamp rises off the paper, ready to come down again */
+.stamped:has(.btn:hover, .btn:focus-visible) .stamp-hero { translate: 0 -5px; scale: 1.035; opacity: 0.78; }
+@media (prefers-reduced-motion: no-preference) {
+  html.js .stamp-hero:not(.struck), html.js .stamp-ghost:not(.struck) { opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .stamp-hero, .btn { transition: none; }
+  .stamped:has(.btn:hover, .btn:focus-visible) .stamp-hero { translate: none; scale: none; }
+}
+
+/* the orden continues: each part is a ruled section of the same form */
+.part { border-bottom: 2px solid var(--form); }
+.part-head {
+  margin: 0;
+  padding: clamp(36px, 6vw, 72px) var(--pad) 18px;
+  border-bottom: 2px solid var(--form);
+  font-stretch: 65%;
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: clamp(1.9rem, 3.6vw, 2.9rem);
+  line-height: 0.98;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+}
+.part-head span { display: block; margin-top: 6px; font-stretch: 85%; font-weight: 600; text-transform: none; font-size: 0.5em; color: var(--form-soft); letter-spacing: 0; }
+.part .row:last-child { border-bottom: 0; }
+
+.checks { list-style: none; margin: 0; padding: 0; max-width: 640px; }
+.checks li {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px dotted var(--form-soft);
+  font-family: var(--f-type), monospace;
+  color: var(--carbon);
+  font-size: 1.04rem;
+}
+.checks li:first-child { padding-top: 0; }
+.checks li:last-child { border-bottom: 0; padding-bottom: 0; }
+/* typed X in the box: the reason applies, not that it was approved */
+.box { flex: none; width: 20px; height: 20px; border: 1.5px solid var(--form); position: relative; }
+.box::before, .box::after { content: ""; position: absolute; left: 50%; top: 50%; width: 15px; height: 2px; background: var(--carbon); }
+.box::before { transform: translate(-50%, -50%) rotate(45deg); }
+.box::after { transform: translate(-50%, -50%) rotate(-45deg); }
+
+.circuit { list-style: none; margin: 0; padding: 0; }
+.circuit .num { min-width: 2.2em; text-align: center; font-size: 0.9rem; }
+.circuit h3 { margin: 0 0 4px; font-stretch: 78%; font-weight: 750; font-size: 1.3rem; line-height: 1.15; }
+
+.ledger { width: 100%; max-width: 760px; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+.ledger th { text-align: left; font-stretch: 70%; font-weight: 650; text-transform: uppercase; letter-spacing: 0.06em; font-size: 0.74rem; color: var(--form-soft); padding: 0 12px 8px 0; border-bottom: 1px solid var(--form); }
+.ledger td { padding: 9px 12px 9px 0; border-bottom: 1px dotted var(--form-soft); vertical-align: top; font-family: var(--f-type), monospace; color: var(--carbon); font-size: 0.98rem; }
+.ledger tr:last-child td { border-bottom: 0; }
+.ledger td:first-child { white-space: nowrap; }
+.ledger td:nth-child(2) { white-space: nowrap; color: var(--form); }
+
+/* the talón: torn along a perforation */
+.talon { position: relative; background: color-mix(in srgb, var(--triplicado) 30%, var(--original)); margin-top: -2px; }
+/* punched holes along the tear line: the pink copy shows through each one */
+.talon::before {
+  content: "";
+  position: absolute;
+  left: 22px;
+  right: 22px;
+  top: -4px;
+  height: 8px;
+  background: radial-gradient(circle at 4px 4px, var(--duplicado) 2.3px, rgb(110 40 70 / 0.45) 2.9px, transparent 3.5px) 0 0 / 11px 8px repeat-x;
+}
+/* die-cut notches where the tear starts, at both edges of the sheet */
+.talon::after {
+  content: "";
+  position: absolute;
+  left: -10px;
+  right: -10px;
+  top: -10px;
+  height: 20px;
+  background:
+    radial-gradient(circle at 10px 10px, var(--duplicado) 9.5px, transparent 10px) left / 20px 20px no-repeat,
+    radial-gradient(circle at 10px 10px, var(--duplicado) 9.5px, transparent 10px) right / 20px 20px no-repeat;
+  pointer-events: none;
+}
+.firma { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; }
+.firma-line { margin-top: 22px; border-width: 1px 0 0; padding: 8px 0 0; min-width: min(320px, 100%); }
+
+.foot { padding: 18px var(--pad); font-size: 0.88rem; color: var(--form-soft); }
+.foot p { margin: 0; }
+
+@media (max-width: 860px) {
+  .orden { grid-template-columns: minmax(0, 1fr); }
+  .fields { border-right: 0; border-bottom: 2px solid var(--form); }
+  .side { grid-template-columns: 0.8fr 1.2fr; grid-template-rows: auto; }
+  .carnet { border-bottom: 0; border-right: 1px solid var(--form); padding: 20px 16px 14px; }
+  .carnet img { width: 88%; }
+}
+@media (max-width: 520px) {
+  /* label sits above its value */
+  .row { grid-template-columns: minmax(0, 1fr); gap: 8px; padding-block: 12px; }
+  .row > .label { justify-self: start; }
+  .row-main .label { margin-top: 0; }
+  .form-sub, .form-no { display: block; margin: 2px 0 0; }
+  .strip nav a:not(.strip-wa):not([href="#contacto"]) { display: none; }
+  /* bring the authorization up beside the headline; the photo follows Gestiona */
+  .orden { display: flex; flex-direction: column; }
+  .fields, .side { display: contents; }
+  .o-prestador { order: 1; }
+  .o-practica { order: 2; }
+  .auth { order: 3; padding: 4px var(--pad) 22px; border-bottom: 1px solid var(--form); }
+  .o-diag { order: 4; }
+  .o-gestiona { order: 5; }
+  .carnet { order: 6; border-right: 0; border-bottom: 1px solid var(--form); }
+  .carnet img { width: 48%; }
+  .o-modalidad { order: 7; border-bottom: 0; }
+  .auth .label { display: none; }
+  .stamped { padding-top: 66px; }
+  .stamp-hero { width: 190px; left: 60px; }
+  .ledger thead { display: none; }
+  .ledger tr { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 2px 12px; padding: 9px 0; border-bottom: 1px dotted var(--form-soft); }
+  .ledger tr:last-child { border-bottom: 0; }
+  .ledger td { padding: 0; border: 0; }
+  .ledger td:nth-child(3) { grid-column: 1 / -1; }
+  .circuit .row { grid-template-columns: auto minmax(0, 1fr); }
+}
